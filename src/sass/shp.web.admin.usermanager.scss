@@ -1,0 +1,74 @@
+@mixin panel(){
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+@mixin textbox($borderColor){
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid $borderColor;
+  padding: 6px 12px;
+  width: 250px;
+  font-size: 13px;
+  font-family: Arial;
+}
+
+.labelled-input{
+  display: inline-block;
+  
+  label{
+    float: left;
+    margin: 5px 10px 5px 5px;
+    width: 200px;
+    font-weight: normal;
+  }
+
+  input{
+    float: left;
+    margin: 8px 5px 5px 5px;
+  }
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.action-panel{
+  div{
+    button{
+      margin: 5px;
+    }
+  }
+}
+
+div{
+  max-width: 900px;
+}
+
+body{
+  font-family: Arial;
+}
+
+input[type='text']{
+  @include textbox(#ddd);
+  transition: 0.3s;
+  -webkit-transform: translate3d(0,0,0);
+  color: #ABABAB;
+}
+
+input[type='text']:focus{
+  @include textbox(#0095FF);
+  box-shadow: inset 2px 2px 1px 0px #dddddd;
+  transition: 0.3s;
+  -webkit-transform: translate3d(0,0,0);
+  color: #000;
+}
