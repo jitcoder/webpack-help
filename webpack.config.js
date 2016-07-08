@@ -2,12 +2,12 @@ const path = require('path');
 // const webpack = require('webpack');
 
 function defineApplication(appPath) {
-  const sources = ['babel-polyfill'];
+  const sources = [];
   if (process.env.NODE_ENV !== 'production') {
-    sources.push('webpack-dev-server/client?http://dev04-pc:8080');
+    sources.push('webpack-dev-server/client?http://localhost:8080');
     sources.push('webpack/hot/dev-server');
   }
-
+  sources.push('babel-polyfill');
   sources.push(appPath);
 
   return sources;
@@ -15,8 +15,7 @@ function defineApplication(appPath) {
 
 module.exports = {
   entry: {
-    index: defineApplication('apps/index'),
-    vendor: ['react', 'react-dom', 'babel-polyfill']
+    index: defineApplication('apps/index')
   },
   output: {
     publicPath: '/assets/js',

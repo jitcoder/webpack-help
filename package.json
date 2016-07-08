@@ -5,8 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "prod": "SET NODE_ENV=production & node node_modules/webpack/bin/webpack.js -p",
-    "dev": "SET NODE_ENV=development & node node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --host 0.0.0.0 --progress --colors --content-base public/",
-    "devsrv": "nodemon server.js"
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",

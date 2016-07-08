@@ -17,7 +17,7 @@ new WebpackDevServer(webpack(config), {
   proxy: {
     '/api*': 'http://localhost:3000'
   },
-  publicPath: '/assets/js/'
+  publicPath: config.output.publicPath
 }).listen(8080, '0.0.0.0', (e) => {
   if (e) {
     console.log(e);
